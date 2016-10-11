@@ -1,0 +1,8 @@
+---
+   - name: Thanksgiving Servers
+     hosts: localhost
+     gather_facts: False
+     connection: local
+     tasks:
+       - name: Deploy servers
+         shell: mkdir /tmp/runnerTest
