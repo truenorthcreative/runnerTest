@@ -8,6 +8,8 @@
         - name: checking kernal version
           shell: 
               uname -r
+          register: uname_version
+          debug:uname_version.stdout
 
         - name: Install bind-utils
           yum:
