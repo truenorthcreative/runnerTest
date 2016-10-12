@@ -5,19 +5,88 @@
      connection: local
      tasks:
        - name: Deploy servers
-         clc_server:
-           name: tday
-           template: ubuntu-14-64
-           count: 2
-           cpu: 1
-           memory: 2
-           group: Ansible
-           state: present
-           add_public_ip: true
-           public_ip_ports:
-             - 22
-             - 80
-           ttl: 345600
-         register: clc
-       - name: debug
-         debug: var=clc.server_ids
+         yum: 
+         
+       - name: upgrade all packages
+          yum: 
+             name=* 
+             state=latest
+             update_cache=yes
+    
+        - name: checking kernal version
+          shell: 
+              uname -r
+
+        - name: Copy bashrc to remote machines
+          template:
+              src=bashrc
+              dest=/etc/bashrc
+
+        - name: Install bind-utils
+          yum:
+             name=bind-utils
+             state=latest
+
+        - name: rngd tools install
+          yum:
+             name=rng-tools
+             state=latest
+  
+        - name: Installing openLDAP client libraries
+          yum:
+             name=openldap-clients
+             state=latest
+
+        - name: Installing LDAP pam client libraries
+          yum:
+             name=nss-pam-ldapd
+             state=latest
+
+        - name: Installing python pip
+          yum:
+             name=python-pip
+             state=latest
+
+        - name: Install libselinux-python pkg
+          yum:
+             name=libselinux-python
+             state=latest
+
+#Kerberos client bundle
+        - name: Install Kerberos Clients Bundle -1
+          yum: 
+             name=krb5-workstation
+             state=latest 
+        - name: Install Kerberos Clients Bundle -2
+          yum:
+             name=krb5-libs
+             state=latest
+        - name: Install Kerberos Clients Bundle -3
+          yum:
+             name=krb5-auth-dialog
+             state=latest
+
+        - name: Install nscd package
+          yum: 
+             name=nscd 
+             state=latest
+      
+        - name: Installing ntp package
+          yum: 
+             name=ntp 
+             state=latest
+
+        - name: installing mysql-connector-java
+          yum: 
+             name=mysql-connector-java 
+             state=latest
+
+        - name: installing wget
+          yum:
+             name=wget
+             state=latest
+
+        - name: Install c libraries
+          yum:
+             name=gcc
+             state=latest
