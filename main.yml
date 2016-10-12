@@ -1,6 +1,6 @@
 ---
    - name: Install Common packages
-     hosts: all
+     hosts: ALL
      remote_user: root
      gather_facts: False
      connection: local
