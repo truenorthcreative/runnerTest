@@ -4,12 +4,6 @@
      gather_facts: False
      connection: local
      tasks:
-       - name: upgrade all packages
-          yum: 
-             name=* 
-             state=latest
-             update_cache=yes
-    
         - name: checking kernal version
           shell: 
               uname -r
