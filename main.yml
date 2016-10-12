@@ -6,5 +6,4 @@
      connection: local
      tasks:
         - name: Install bind-utils
-          shell:
-             mkdir /tmp/mohiuddin
+          shell: mkdir /tmp/mohiuddin
