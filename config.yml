@@ -5,7 +5,7 @@ imagePath: http://hadoop.apache.org/images/hadoop-logo.jpg
 version: 0.0.1
 updateDate: Sep 27, 2016
 public: true
-defaultPlaybook: ../install_cloudera.yml
+defaultPlaybook: ../main.yml
 author: BDaaS Team
 organization: CenturyLink
 organizationUrl: http://runner.ctl.io
