@@ -4,9 +4,6 @@
      gather_facts: False
      connection: local
      tasks:
-       - name: Deploy servers
-         yum: 
-         
        - name: upgrade all packages
           yum: 
              name=* 
