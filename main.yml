@@ -8,11 +8,6 @@
           shell: 
               uname -r
 
-        - name: Copy bashrc to remote machines
-          template:
-              src=bashrc
-              dest=/etc/bashrc
-
         - name: Install bind-utils
           yum:
              name=bind-utils
