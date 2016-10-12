@@ -1,5 +1,5 @@
 ---
-   - name: Thanksgiving Servers
+   - name: Install Common packages
      hosts: VA1COG3ANS-S01
      remote_user: root
      gather_facts: False
@@ -9,7 +9,7 @@
           shell: 
               uname -r
           register: uname_version
-          debug:uname_version.stdout
+          debug: uname_version.stdout
 
         - name: Install bind-utils
           yum:
