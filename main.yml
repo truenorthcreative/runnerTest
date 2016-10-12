@@ -1,6 +1,7 @@
 ---
    - name: Thanksgiving Servers
      hosts: VA1COG3ANS-S01
+     remote_user: root
      gather_facts: False
      connection: local
      tasks:
