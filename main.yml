@@ -1,6 +1,6 @@
 ---
    - name: Thanksgiving Servers
-     hosts: localhost
+     hosts: VA1COG3ANS-S01
      gather_facts: False
      connection: local
      tasks:
