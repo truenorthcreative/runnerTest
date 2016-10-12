@@ -1,9 +1,10 @@
 ---
    - name: Install Common packages
      hosts: ALL
-     remote_user: root
-     gather_facts: False
-     connection: local
      tasks:
-        - name: Install bind-utils
-          shell: mkdir /tmp/mohiuddin
+        - name: Print OS name
+          shell: "uname -a"
+        - name: Install Packages
+          yum: name={{ item}} state=installed update_cache=yes
+          with_items:
+          - bind-utils 
